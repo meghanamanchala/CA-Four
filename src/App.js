@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import QuestionBox from "./components/QuestionBox";
-import questions from './questions'
 import img from './images/logo.png'
 
 function App() {
@@ -11,9 +10,9 @@ const[themeName,setThemeName] = useState("dark")
 
 useEffect(()=>{
   if(dark){
-    setThemeName("Dark")
-  }else{
     setThemeName("Light")
+  }else{
+    setThemeName("Dark")
   }
 
 },[dark])
@@ -37,7 +36,7 @@ const styleTheme ={
       <button className="theme" onClick={handleBackgroundColor}>{themeName}</button>
       </div>
       <div>
-       <QuestionBox props={questions} />
+       <QuestionBox />
       </div>
     </div>
   );
